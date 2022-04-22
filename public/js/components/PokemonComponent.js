@@ -17,7 +17,7 @@ class PokemonComponent extends Component {
         alt="${this.name}"
       />
       <h4 class="pokemon-name">${this.name}</h4>
-      <p class="serie__info">Hola</p>
+      <p class="pokemon-info">Aqui un puto Pikachu</p>
       `;
   }
 }
