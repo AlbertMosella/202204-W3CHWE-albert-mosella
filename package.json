@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky install",
-    "sas": "sass sass/styles.scss /public/css/styles.css --watch"
+    "sas": "sass sass/styles.scss public/css/styles.css --watch",
+    "sass-compile": "sass public/sass/styles.scss public/css/styles.css"
   },
   "author": "",
   "license": "ISC",
