@@ -1,21 +1,17 @@
 /* eslint-disable no-new */
 import MainAppComponent from "./js/components/MainAppComponent.js";
+import PokemonComponent from "./js/components/PokemonComponent.js";
 
-const pokemons = [
-  { name: "pikachu" },
-  { name: "bulbasur" },
-  { name: "charizard" },
-];
 const { body } = document;
 
-new MainAppComponent(body, pokemons);
+new MainAppComponent(body);
 
 const getPokemons = async () => {
   const response = await fetch(
     "https://pokeapi.co/api/v2/pokemon?limit=50&offset=0"
   );
-  const finalPokeData = await response.json();
-  return finalPokeData;
+  const pokeData = await response.json();
+  return pokeData;
 };
 
 const allPokemons = [];
@@ -26,12 +22,18 @@ const getIndividualPokemonData = async () => {
     const getPokemonsDetails = async (thisUrl) => {
       const pokemonsDetails = await fetch(thisUrl);
       const pokeDetails = await pokemonsDetails.json();
-      /*  console.log(pokeDetails); */
+      allPokemons.push(pokeDetails);
       return pokeDetails;
     };
-
-    allPokemons.push(getPokemonsDetails(url));
+    getPokemonsDetails(url);
   });
-  /* console.log(allPokemons); */
+  const pokemonsArray = await allPokemons;
+  const myPokemons = document.querySelector(".pokemon-list");
+  for (let i = 0; i < pokemonsArray.length; i++) {
+    new PokemonComponent(myPokemons, pokemonsArray[i]);
+  }
+  /* pokemonsArray.forEach((pokemon) => {
+    new PokemonComponent(myPokemons, pokemon);
+  }); */
 };
 getIndividualPokemonData();
