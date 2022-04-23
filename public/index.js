@@ -6,16 +6,21 @@ const { body } = document;
 
 new MainAppComponent(body);
 
-const createPokemonComponent = (name, height, weight) => {
+const createPokemonComponent = (name, height, weight, image) => {
   const pokeList = document.querySelector(".pokemon-list");
-  new PokemonComponent(pokeList, { name, height, weight });
+  new PokemonComponent(pokeList, { name, height, weight, image });
 };
 
 const fetchPokemon = (name) => {
   fetch(`https://pokeapi.co/api/v2/pokemon/${name}/`)
     .then((response) => response.json())
     .then((pokeData) => {
-      createPokemonComponent(pokeData.name, pokeData.height, pokeData.weight);
+      createPokemonComponent(
+        pokeData.name,
+        pokeData.height,
+        pokeData.weight,
+        pokeData.sprites.other.dream_world.front_default
+      );
     });
 };
 
@@ -25,7 +30,6 @@ const fetchAllPokemons = () => {
   fetch(`https://pokeapi.co/api/v2/pokemon?limit=20&offset=0`)
     .then((response) => response.json())
     .then((jsonPokeList) => {
-      console.log(jsonPokeList);
       jsonPokeList.results.forEach((pokemon) => {
         fetchPokemon(pokemon.name);
       });
