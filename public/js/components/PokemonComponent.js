@@ -1,11 +1,26 @@
 import Component from "./Component.js";
 
 class PokemonComponent extends Component {
-  name;
+  pokemon;
 
-  constructor(parentElement, { name }) {
+  constructor(
+    parentElement,
+    {
+      name,
+      height,
+      weight,
+      sprites: {
+        other: {
+          "offical-artwork": { from_default: image },
+        },
+      },
+    }
+  ) {
     super(parentElement, "li", "pokemon-card");
     this.name = name;
+    this.height = height;
+    this.weight = weight;
+    this.image = image;
     this.render();
   }
 
@@ -13,11 +28,12 @@ class PokemonComponent extends Component {
     this.element.innerHTML = `
       <img
         class="pokemon-picture"
-        src=""
-        alt="${this.name}"
+        src="${this.image}"
+        alt="El pokemon ${this.name}"
       />
       <h4 class="pokemon-name">${this.name}</h4>
-      <p class="pokemon-info">Aqui un puto Pikachu</p>
+      <p class="pokemon-info">Altura: ${this.height}</p>
+      <p class="pokemon-info">Peso: ${this.weight}</p>
       `;
   }
 }

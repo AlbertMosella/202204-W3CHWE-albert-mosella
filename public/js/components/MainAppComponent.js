@@ -1,15 +1,10 @@
-/* eslint-disable no-new */
 import Component from "./Component.js";
-import PokemonComponent from "./PokemonComponent.js";
 
 class MainAppComponent extends Component {
-  pokemons;
-
-  constructor(parentElement, pokemons) {
+  constructor(parentElement) {
     super(parentElement, "div", "container");
-    this.pokemons = pokemons;
     this.render();
-    this.showPokemons();
+    /* this.showPokemons(); */
   }
 
   render() {
@@ -26,13 +21,13 @@ class MainAppComponent extends Component {
       </main>`;
   }
 
-  showPokemons() {
+  /* showPokemons() {
     const myPokemons = document.querySelector(".pokemon-list");
 
     this.pokemons.forEach((pokemon) => {
       new PokemonComponent(myPokemons, { ...pokemon });
     });
-  }
+  } */
 }
 
 export default MainAppComponent;

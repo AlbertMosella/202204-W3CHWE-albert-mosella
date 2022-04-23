@@ -1,7 +1,7 @@
 {
   "name": "challengepokemon",
   "version": "1.0.0",
-  "description": "",
+  "description": "- [x] Conectar y consumir datos de la PokeApi - [ ] Añadir campos a PokemonComponent para reflejar todos los datos Pokemon - [ ] Mostrar Pokemons - [ ] Añadir un mínimo de CSS - [ ] Añadir test",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -20,5 +20,13 @@
     "husky": "^7.0.0",
     "jest": "^27.5.1",
     "sass": "^1.50.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlbertMosella/202204-W3CHWE-albert-mosella.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AlbertMosella/202204-W3CHWE-albert-mosella/issues"
+  },
+  "homepage": "https://github.com/AlbertMosella/202204-W3CHWE-albert-mosella#readme"
 }
