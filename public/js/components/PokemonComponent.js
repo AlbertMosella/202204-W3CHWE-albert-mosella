@@ -3,24 +3,12 @@ import Component from "./Component.js";
 class PokemonComponent extends Component {
   pokemon;
 
-  constructor(
-    parentElement,
-    {
-      name,
-      height,
-      weight,
-      sprites: {
-        other: {
-          "offical-artwork": { from_default: image },
-        },
-      },
-    }
-  ) {
+  constructor(parentElement, { name, height, weight }) {
     super(parentElement, "li", "pokemon-card");
     this.name = name;
     this.height = height;
     this.weight = weight;
-    this.image = image;
+    this.image = "";
     this.render();
   }
 

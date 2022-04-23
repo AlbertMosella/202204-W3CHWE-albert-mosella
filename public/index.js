@@ -6,34 +6,29 @@ const { body } = document;
 
 new MainAppComponent(body);
 
-const getPokemons = async () => {
-  const response = await fetch(
-    "https://pokeapi.co/api/v2/pokemon?limit=50&offset=0"
-  );
-  const pokeData = await response.json();
-  return pokeData;
+const createPokemonComponent = (name, height, weight) => {
+  const pokeList = document.querySelector(".pokemon-list");
+  new PokemonComponent(pokeList, { name, height, weight });
 };
 
-const allPokemons = [];
-
-const getIndividualPokemonData = async () => {
-  const pokemonList = await getPokemons();
-  pokemonList.results.forEach(({ url }) => {
-    const getPokemonsDetails = async (thisUrl) => {
-      const pokemonsDetails = await fetch(thisUrl);
-      const pokeDetails = await pokemonsDetails.json();
-      allPokemons.push(pokeDetails);
-      return pokeDetails;
-    };
-    getPokemonsDetails(url);
-  });
-  const pokemonsArray = await allPokemons;
-  const myPokemons = document.querySelector(".pokemon-list");
-  for (let i = 0; i < pokemonsArray.length; i++) {
-    new PokemonComponent(myPokemons, pokemonsArray[i]);
-  }
-  /* pokemonsArray.forEach((pokemon) => {
-    new PokemonComponent(myPokemons, pokemon);
-  }); */
+const fetchPokemon = (name) => {
+  fetch(`https://pokeapi.co/api/v2/pokemon/${name}/`)
+    .then((response) => response.json())
+    .then((pokeData) => {
+      createPokemonComponent(pokeData.name, pokeData.height, pokeData.weight);
+    });
 };
-getIndividualPokemonData();
+
+fetchPokemon(9);
+
+const fetchAllPokemons = () => {
+  fetch(`https://pokeapi.co/api/v2/pokemon?limit=20&offset=0`)
+    .then((response) => response.json())
+    .then((jsonPokeList) => {
+      console.log(jsonPokeList);
+      jsonPokeList.results.forEach((pokemon) => {
+        fetchPokemon(pokemon.name);
+      });
+    });
+};
+fetchAllPokemons();
