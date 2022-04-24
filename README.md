@@ -4,8 +4,8 @@
 
 - [x] Conectar y consumir datos de la PokeApi
 - [x] Añadir campos a PokemonComponent para reflejar todos los datos Pokemon
-- [ ] Mostrar Pokemons
-- [ ] Añadir un mínimo de CSS
+- [x] Mostrar Pokemons
+- [x] Añadir un mínimo de CSS
 - [ ] Añadir test
 
 ## V2 (Then do it right)
@@ -21,3 +21,8 @@
 -[ ] Poder guardar los pokemons que quieras en tu api local
 
 # Lista de componentes
+
+- Componente contenedor de la app
+- Header (con logo Pokemon)
+- Menu de navegación
+- Pokemon Card

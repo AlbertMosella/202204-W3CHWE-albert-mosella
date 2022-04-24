@@ -9,11 +9,19 @@ class MainAppComponent extends Component {
 
   render() {
     this.element.innerHTML = `<header class="main-header">
-        <h1 class="main-title">My Pokemon</h1>
+        <h1 class="main-title"><img
+          class="pokemon-logo"
+          src="images/pokelogo.png"
+          alt="Pokemon logo"
+      /></h1>
       </header>
+      <nav class="navigation-menu">
+      <a href="">All Pokemons</a>
+      <a href="">My Pokemon</a>
+      <a href="">Pokemon Details</a>
+      </nav>
       <main class="main">
-        <section class="pokemons">
-          <h2 class="section-title">Pokemons list</h2>
+        <section class="pokemons"> 
           <ul class="pokemon-list">
             
           </ul>
