@@ -4,7 +4,6 @@ class MainAppComponent extends Component {
   constructor(parentElement) {
     super(parentElement, "div", "container");
     this.render();
-    /* this.showPokemons(); */
   }
 
   render() {
@@ -28,14 +27,6 @@ class MainAppComponent extends Component {
         </section>
       </main>`;
   }
-
-  /* showPokemons() {
-    const myPokemons = document.querySelector(".pokemon-list");
-
-    this.pokemons.forEach((pokemon) => {
-      new PokemonComponent(myPokemons, { ...pokemon });
-    });
-  } */
 }
 
 export default MainAppComponent;

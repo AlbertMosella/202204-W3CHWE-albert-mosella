@@ -1,4 +1,3 @@
-/* eslint-disable no-new */
 import MainAppComponent from "./js/components/MainAppComponent.js";
 import PokemonComponent from "./js/components/PokemonComponent.js";
 
