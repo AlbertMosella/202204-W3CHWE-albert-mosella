@@ -4,7 +4,7 @@ html {
 }
 
 body {
-  background-color: rgb(255, 255, 161);
+  background-color: lightblue;
 }
 
 .main-header {
@@ -55,15 +55,22 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 2px solid green;
   border-radius: 30px;
   padding: 20px;
-  background-color: lightgreen;
-  margin: 5px;
+  background-color: rgb(230, 230, 230);
+  margin: 7px;
+  width: 150px;
+  box-shadow: 5px 5px 5px rgb(59, 59, 59);
+  transition: all 0.4s ease;
 
   .pokemon-picture {
-    width: 125px;
+    height: 175px;
+    width: 100%;
   }
+}
+
+.pokemon-card:hover {
+  transform: scale(1.1);
 }
 
 li h4 {
