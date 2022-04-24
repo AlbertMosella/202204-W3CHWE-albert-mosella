@@ -19,9 +19,11 @@ class PokemonComponent extends Component {
         src="${this.image}"
         alt="El pokemon ${this.name}"
       />
-      <h4 class="pokemon-name">${this.name}</h4>
-      <p class="pokemon-info">Altura: ${this.height}</p>
-      <p class="pokemon-info">Peso: ${this.weight}</p>
+      <div class="pokemon-info">
+        <h4 class="pokemon-name">${this.name}</h4>
+        <p class="pokemon-info">Altura: ${this.height}0 cm</p>
+        <p class="pokemon-info">Peso: ${this.weight} kg</p>
+      </div>
       `;
   }
 }
