@@ -21,8 +21,8 @@ class PokemonComponent extends Component {
       />
       <div class="pokemon-info">
         <h4 class="pokemon-name">${this.name}</h4>
-        <p class="pokemon-info">Altura: ${this.height}0 cm</p>
-        <p class="pokemon-info">Peso: ${this.weight} kg</p>
+        <p class="pokemon-info">Height: ${this.height}0 cm</p>
+        <p class="pokemon-info">Weight: ${this.weight} kg</p>
       </div>
       `;
   }

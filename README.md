@@ -2,11 +2,11 @@
 
 ## MVP (First do it)
 
+- [x] Crear componentes básicos
 - [x] Conectar y consumir datos de la PokeApi
 - [x] Añadir campos a PokemonComponent para reflejar todos los datos Pokemon
 - [x] Mostrar Pokemons
 - [x] Añadir un mínimo de CSS
-- [ ] Añadir test
 
 ## V2 (Then do it right)
 
